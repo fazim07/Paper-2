@@ -1,6 +1,6 @@
 #### Preamble ####
 # Purpose: Downloads and saves survey data to new file
-# Author: Finn Korol, Jayden Jung, Sofia Sellitto 
+# Author: Faiza Imam, Catherine Punnoose, Quang Mai 
 # Data: survey.dta
 # Contact: finn.korol@mail.utoronto.ca, jayden.jung@mail.utoronto.ca, sofia.sellitto@mail.utoronto.ca
 # License: MIT
@@ -11,7 +11,12 @@ library(readstata13)
 library(readr)
 
 #reading in the stata file
-survey <- read.dta13(here::here("inputs/data/survey.dta"))
+instsurvey <- read.dta13(here::here("inputs/data/instsurvey.dta"))
+stdsurvey <- read.dta13(here::here("inputs/data/stdsurvey.dta"))
+experiment <- read.dta13(here::here("inputs/data/experiment.dta"))
+
 
 #writing to csv
-write_csv(survey, here::here("inputs/data/survey.csv"))
+write_csv(survey, here::here("inputs/data/instsurvey.csv"))
+write_csv(survey, here::here("inputs/data/stdsurvey.csv"))
+write_csv(survey, here::here("inputs/data/experiment.csv"))
